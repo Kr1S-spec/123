@@ -8,8 +8,7 @@
     --dark: #1a1a1a;
     --gray: #666666;
     --shadow: rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-}
+    --transition: all 0.3s ease;}
 
 * {
     margin: 0;
@@ -43,10 +42,10 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
+
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
-}
+    padding: 0 2rem;}
 
 .logo {
     display: flex;
@@ -77,8 +76,7 @@ body {
     background: var(--white);
     font-size: 0.9rem;
     cursor: pointer;
-    outline: none;
-}
+    outline: none;}
 
 .language-selector select:hover {
     border-color: var(--primary);
@@ -97,10 +95,8 @@ body {
     transition: var(--transition);
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--primary);
-}
+.nav-links a:hover,.nav-links a.active {
+    color: var(--primary);}
 
 .hamburger {
     display: none;
@@ -136,8 +132,7 @@ body {
 
 .hero p {
     font-size: 1.3rem;
-    margin-bottom: 2rem;
-}
+    margin-bottom: 2rem;}
 
 .search-box {
     display: flex;
@@ -389,6 +384,7 @@ body {
     border: none;
     border-radius: 5px;
     outline: none;
+    min-width: 250px;
 }
 
 .newsletter-form button {

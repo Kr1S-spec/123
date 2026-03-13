@@ -32,36 +32,36 @@
     <div class="container">
         <h1>Pleven - Галерия</h1>
         <div class="gallery">
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymDete.jpg" alt="Детска"><div class="caption">Детска</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymGame.jpg" alt="Игрална"><div class="caption">Игрална</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymGame2.jpg" alt="Игрална 2"><div class="caption">Игрална 2</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymKoridor.jpg" alt="Коридор"><div class="caption">Коридор</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSnimka.jpg" alt="Снимка 1"><div class="caption">Снимка 1</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSnimka1.jpg" alt="Снимка 2"><div class="caption">Снимка 2</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSnimka2.jpg" alt="Снимка 3"><div class="caption">Снимка 3</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSnimka3.jpg" alt="Снимка 4"><div class="caption">Снимка 4</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSnimka4.jpg" alt="Снимка 5"><div class="caption">Снимка 5</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSnimka5.jpg" alt="Снимка 6"><div class="caption">Снимка 6</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymFront.jpg" alt="Фасад"><div class="caption">Фасад</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymDete.jpg" alt="Детска"><div class="caption">Детска</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymGame.jpg" alt="Игрална"><div class="caption">Игрална</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymGame2.jpg" alt="Игрална 2"><div class="caption">Игрална 2</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymKoridor.jpg" alt="Коридор"><div class="caption">Коридор</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSnimka.jpg" alt="Снимка 1"><div class="caption">Снимка 1</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSnimka1.jpg" alt="Снимка 2"><div class="caption">Снимка 2</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSnimka2.jpg" alt="Снимка 3"><div class="caption">Снимка 3</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSnimka3.jpg" alt="Снимка 4"><div class="caption">Снимка 4</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSnimka4.jpg" alt="Снимка 5"><div class="caption">Снимка 5</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSnimka5.jpg" alt="Снимка 6"><div class="caption">Снимка 6</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymFront.jpg" alt="Фасад"><div class="caption">Фасад</div></div>
         </div>
     </div>
     <div class="footer">
         <p>&copy; 2024 КП Хилс</p>
     </div>
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox" id="lightbox" onclick="zatvoriSlika()">
         <span class="close">&times;</span>
-        <img id="lightbox-img" src="" alt="">
-        <div class="caption" id="lightbox-caption"></div>
+        <img id="golqmaSlika" src="" alt="">
+        <div class="caption" id="tekstCapt"></div>
     </div>
     <script>
-        function openLightbox(el) {
-            var img = el.querySelector('img');
-            var caption = el.querySelector('.caption').textContent;
-            document.getElementById('lightbox-img').src = img.src;
-            document.getElementById('lightbox-caption').textContent = caption;
+        function otvoriSlika(el) {
+            var slika = el.querySelector('img');
+            var tekst = el.querySelector('.caption').textContent;
+            document.getElementById('golqmaSlika').src = slika.src;
+            document.getElementById('tekstCapt').textContent = tekst;
             document.getElementById('lightbox').classList.add('active');
         }
-        function closeLightbox() {
+        function zatvoriSlika() {
             document.getElementById('lightbox').classList.remove('active');
         }
     </script>

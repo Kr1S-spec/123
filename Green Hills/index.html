@@ -32,37 +32,37 @@
     <div class="container">
         <h1>Green Hills - Галерия</h1>
         <div class="gallery">
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymFront.jpg" alt="Фасад"><div class="caption">Фасад</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymBanq.jpg" alt="Баня"><div class="caption">Баня</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymBanq2.jpg" alt="Баня 2"><div class="caption">Баня 2</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymHol.jpg" alt="Хол"><div class="caption">Хол</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymHol2.jpg" alt="Хол 2"><div class="caption">Хол 2</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymHol3.jpg" alt="Хол 3"><div class="caption">Хол 3</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymHol4.jpg" alt="Хол 4"><div class="caption">Хол 4</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymHol5.jpg" alt="Хол 5"><div class="caption">Хол 5</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymHol6.jpg" alt="Хол 6"><div class="caption">Хол 6</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymHol7.jpg" alt="Хол 7"><div class="caption">Хол 7</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymHol8.jpg" alt="Хол 8"><div class="caption">Хол 8</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymHol9.jpg" alt="Хол 9"><div class="caption">Хол 9</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymFront.jpg" alt="Фасад"><div class="caption">Фасад</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymBanq.jpg" alt="Баня"><div class="caption">Баня</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymBanq2.jpg" alt="Баня 2"><div class="caption">Баня 2</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymHol.jpg" alt="Хол"><div class="caption">Хол</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymHol2.jpg" alt="Хол 2"><div class="caption">Хол 2</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymHol3.jpg" alt="Хол 3"><div class="caption">Хол 3</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymHol4.jpg" alt="Хол 4"><div class="caption">Хол 4</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymHol5.jpg" alt="Хол 5"><div class="caption">Хол 5</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymHol6.jpg" alt="Хол 6"><div class="caption">Хол 6</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymHol7.jpg" alt="Хол 7"><div class="caption">Хол 7</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymHol8.jpg" alt="Хол 8"><div class="caption">Хол 8</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymHol9.jpg" alt="Хол 9"><div class="caption">Хол 9</div></div>
         </div>
     </div>
     <div class="footer">
         <p>&copy; 2024 КП Хилс</p>
     </div>
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox" id="lightbox" onclick="zatvoriSlika()">
         <span class="close">&times;</span>
-        <img id="lightbox-img" src="" alt="">
-        <div class="caption" id="lightbox-caption"></div>
+        <img id="golqmaSlika" src="" alt="">
+        <div class="caption" id="tekstCapt"></div>
     </div>
     <script>
-        function openLightbox(el) {
-            var img = el.querySelector('img');
-            var caption = el.querySelector('.caption').textContent;
-            document.getElementById('lightbox-img').src = img.src;
-            document.getElementById('lightbox-caption').textContent = caption;
+        function otvoriSlika(el) {
+            var slika = el.querySelector('img');
+            var tekst = el.querySelector('.caption').textContent;
+            document.getElementById('golqmaSlika').src = slika.src;
+            document.getElementById('tekstCapt').textContent = tekst;
             document.getElementById('lightbox').classList.add('active');
         }
-        function closeLightbox() {
+        function zatvoriSlika() {
             document.getElementById('lightbox').classList.remove('active');
         }
     </script>

@@ -1,46 +1,25 @@
-const properties = [
+const imoti = [
     {
         id: 1,
         title: "Green Hills",
-        type: "house",
-        price: 385000,
-        priceType: "sale",
         location: "Green Hills",
-        beds: 4,
-        baths: 3,
-        sqft: 2400,
-        image: "images/BeliOsymFront.jpg",
-        description: "Welcome to Green Hills - a stunning property with spacious living room, modern kitchen, and beautiful terrace."
+        image: "images/BeliOsymFront.jpg"
     },
     {
         id: 2,
-        title: "Sunny Beach Apartment",
-        type: "apartment",
-        price: 150000,
-        priceType: "sale",
+        title: "Sunny Beach",
         location: "Sunny Beach",
-        beds: 2,
-        baths: 1,
-        sqft: 850,
-        image: "images/BeliOsymFront.jpg",
-        description: "Beautiful apartment in Sunny Beach with sea view. Perfect for vacation or investment."
+        image: "images/BeliOsymFront.jpg"
     },
     {
         id: 3,
-        title: "Pleven House",
-        type: "house",
-        price: 180000,
-        priceType: "sale",
+        title: "Pleven",
         location: "Pleven",
-        beds: 5,
-        baths: 2,
-        sqft: 2000,
-        image: "images/BeliOsymFront.jpg",
-        description: "Large family house in Pleven with spacious yard and garage."
+        image: "images/BeliOsymFront.jpg"
     }
 ];
 
-const translations = {
+const prevodi = {
     bg: {
         home: "Начало",
         properties: "Имоти",
@@ -63,12 +42,18 @@ const translations = {
         address: "Адрес",
         phone: "Телефон",
         email: "Имейл",
+        addressValue: "гр. Плевен, бул. България №8",
+        phoneValue: "+359878802151",
+        emailValue: "officeresheniabg@gmail.com",
         footerDesc: "Вашият надежден партньор в намирането на перфектния дом в КП Хилс.",
         quickLinks: "Бързи връзки",
         newsletter: "Новинар",
         newsletterDesc: "Абонирайте се за най-новите оферти",
         yourEmail: "Вашият имейл",
-        copyright: "2024 КП Хилс. Всички права запазени."
+        copyright: "2024 КП Хилс. Всички права запазени.",
+        noResults: "Няма намерени имоти",
+        foundResults: "Намерени {count} имоти",
+        thanksSubscribe: "Благодарим за абонамента!"
     },
     en: {
         home: "Home",
@@ -92,28 +77,34 @@ const translations = {
         address: "Address",
         phone: "Phone",
         email: "Email",
+        addressValue: "Pleven, Bulgaria Blvd. №8",
+        phoneValue: "+359878802151",
+        emailValue: "officeresheniabg@gmail.com",
         footerDesc: "Your reliable partner in finding the perfect home in KP Hills.",
         quickLinks: "Quick Links",
         newsletter: "Newsletter",
         newsletterDesc: "Subscribe for the latest offers",
         yourEmail: "Your email",
-        copyright: "2024 KP Hills. All rights reserved."
+        copyright: "2024 KP Hills. All rights reserved.",
+        noResults: "No properties found",
+        foundResults: "Found {count} properties",
+        thanksSubscribe: "Thanks for subscribing!"
     }
 };
 
-let currentLang = 'bg';
+let tekushtEzik = 'bg';
 
-function changeLanguage(lang) {
-    currentLang = lang;
-    const t = translations[lang];
+function smeniEzik(ezik) {
+    tekushtEzik = ezik;
+    const t = prevodi[ezik];
     
     document.querySelectorAll('.nav-links a')[0].textContent = t.home;
     document.querySelectorAll('.nav-links a')[1].textContent = t.properties;
     document.querySelectorAll('.nav-links a')[2].textContent = t.about;
     document.querySelectorAll('.nav-links a')[3].textContent = t.contact;
     
-    const heroTitle = document.querySelector('.hero h1');
-    heroTitle.innerHTML = lang === 'bg' 
+    const naslovHero = document.querySelector('.hero h1');
+    naslovHero.innerHTML = ezik === 'bg' 
         ? 'Намерете своя перфектен <span class="highlight">дом в КП Хилс</span>'
         : 'Find your <span class="highlight">perfect home in KP Hills</span>';
     document.querySelector('.hero p').textContent = t.heroDesc;
@@ -122,25 +113,30 @@ function changeLanguage(lang) {
     document.querySelectorAll('.section-header h2')[0].textContent = t.ourProperties;
     document.querySelectorAll('.section-header p')[0].textContent = t.browseProperties;
     
-    document.querySelectorAll('.house-card-info p').forEach(el => el.textContent = t.details);
+    document.querySelectorAll('.house-card-info p').forEach(function(el) { el.textContent = t.details; });
     
     document.querySelectorAll('.section-header h2')[1].textContent = t.aboutKP;
     document.querySelectorAll('.section-header p')[1].textContent = '';
     document.querySelector('.about-text > p').textContent = t.aboutDesc;
     
-    const features = document.querySelectorAll('.feature span');
-    features[0].textContent = t.verified;
-    features[1].textContent = t.agents;
-    features[2].textContent = t.support;
-    features[3].textContent = t.deals;
+    const featurei = document.querySelectorAll('.feature span');
+    featurei[0].textContent = t.verified;
+    featurei[1].textContent = t.agents;
+    featurei[2].textContent = t.support;
+    featurei[3].textContent = t.deals;
     
     document.querySelectorAll('.section-header h2')[2].textContent = t.contactUs;
     document.querySelectorAll('.section-header p')[2].textContent = t.hearFromYou;
     
-    const infoHeadings = document.querySelectorAll('.info-item h4');
-    infoHeadings[0].textContent = t.address;
-    infoHeadings[1].textContent = t.phone;
-    infoHeadings[2].textContent = t.email;
+    const zaglaviq = document.querySelectorAll('.info-item h4');
+    zaglaviq[0].textContent = t.address;
+    zaglaviq[1].textContent = t.phone;
+    zaglaviq[2].textContent = t.email;
+    
+    const stoinosti = document.querySelectorAll('.info-item p');
+    stoinosti[0].innerHTML = t.addressValue;
+    stoinosti[1].textContent = t.phoneValue;
+    stoinosti[2].textContent = t.emailValue;
     
     document.querySelector('.footer-section p').textContent = t.footerDesc;
     document.querySelectorAll('.footer-section h4')[0].textContent = t.quickLinks;
@@ -149,55 +145,46 @@ function changeLanguage(lang) {
     document.querySelector('#newsletterEmail').placeholder = t.yourEmail;
     document.querySelector('.footer-bottom p').textContent = '© ' + t.copyright;
     
-    document.querySelector('title').textContent = lang === 'bg' ? 'КП Хилс - Агенция за недвижими имоти' : 'KP Hills - Real Estate Agency';
+    document.querySelector('title').textContent = ezik === 'bg' ? 'КП Хилс - Агенция за недвижими имоти' : 'KP Hills - Real Estate Agency';
 }
 
-function scrollToHouses() {
-    document.getElementById('houses').scrollIntoView({ behavior: 'smooth' });
+function scrollToImoti() {
+    document.getElementById('imoti').scrollIntoView({ behavior: 'smooth' });
 }
 
-function openHousePage(houseName) {
-    window.location.href = houseName + '/index.html';
+function otvoriKushta(ime) {
+    window.location.href = ime + '/index.html';
 }
 
-function searchProperties() {
-    scrollToHouses();
-    const location = document.getElementById('locationSearch').value;
-    let filtered = properties.filter(function(p) {
-        return p.location.toLowerCase().includes(location.toLowerCase()) || p.title.toLowerCase().includes(location.toLowerCase());
+function tirseneImoti() {
+    scrollToImoti();
+    const lokaciq = document.getElementById('lokaciq').value;
+    let filtirani = imoti.filter(function(p) {
+        return p.location.toLowerCase().includes(lokaciq.toLowerCase()) || p.title.toLowerCase().includes(lokaciq.toLowerCase());
     });
-    if (filtered.length === 0) {
-        showToast(currentLang === 'bg' ? 'Няма намерени имоти' : 'No properties found', 'info');
+    if (filtirani.length === 0) {
+        pokazhiToast(prevodi[tekushtEzik].noResults, 'info');
     } else {
-        const msg = currentLang === 'bg' ? 'Намерени ' + filtered.length + ' имоти' : 'Found ' + filtered.length + ' properties';
-        showToast(msg, 'success');
+        const msg = prevodi[tekushtEzik].foundResults.replace('{count}', filtirani.length);
+        pokazhiToast(msg, 'success');
     }
 }
 
-function submitContactForm(e) {
+function abonament(e) {
     e.preventDefault();
-    var name = document.getElementById('contactName').value;
-    const msg = currentLang === 'bg' ? 'Благодаря Ви, ' + name + '! Ще се свържем с Вас скоро.' : 'Thank you, ' + name + '! We will contact you soon.';
-    showToast(msg, 'success');
-    document.getElementById('contactForm').reset();
-}
-
-function subscribeNewsletter(e) {
-    e.preventDefault();
-    var email = document.getElementById('newsletterEmail').value;
-    const msg = currentLang === 'bg' ? 'Благодарим за абонамента!' : 'Thanks for subscribing!';
-    showToast(msg, 'success');
+    const msg = prevodi[tekushtEzik].thanksSubscribe;
+    pokazhiToast(msg, 'success');
     document.getElementById('newsletterEmail').value = '';
 }
 
-function showToast(message, type) {
+function pokazhiToast(message, tip) {
     var container = document.getElementById('toastContainer');
     var toast = document.createElement('div');
-    toast.className = 'toast toast-' + type;
-    var icon = 'info-circle';
-    if (type === 'success') icon = 'check-circle';
-    if (type === 'error') icon = 'xmark';
-    toast.innerHTML = '<i class="fa-solid fa-' + icon + '"></i><span>' + message + '</span>';
+    toast.className = 'toast toast-' + tip;
+    var ikona = 'info-circle';
+    if (tip === 'success') ikona = 'check-circle';
+    if (tip === 'error') ikona = 'xmark';
+    toast.innerHTML = '<i class="fa-solid fa-' + ikona + '"></i><span>' + message + '</span>';
     container.appendChild(toast);
     setTimeout(function() { toast.classList.add('show'); }, 10);
     setTimeout(function() {
@@ -206,8 +193,8 @@ function showToast(message, type) {
     }, 3000);
 }
 
-document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
+document.querySelectorAll('a[href^="#"]').forEach(function(kotva) {
+    kotva.addEventListener('click', function(e) {
         e.preventDefault();
         var target = document.querySelector(this.getAttribute('href'));
         if (target) {

@@ -32,38 +32,38 @@
     <div class="container">
         <h1>Sunny Beach - Галерия</h1>
         <div class="gallery">
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSpalnq.jpg" alt="Спалня"><div class="caption">Спалня</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSpalnq2.jpg" alt="Спалня 2"><div class="caption">Спалня 2</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSpalnq3.jpg" alt="Спалня 3"><div class="caption">Спалня 3</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSpalnq4.jpg" alt="Спалня 4"><div class="caption">Спалня 4</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSpalnq5.jpg" alt="Спалня 5"><div class="caption">Спалня 5</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSpalnq6.jpg" alt="Спалня 6"><div class="caption">Спалня 6</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymSpalnq7.jpg" alt="Спалня 7"><div class="caption">Спалня 7</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymTerasa.jpg" alt="Тераса"><div class="caption">Тераса</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymTerasa2.jpg" alt="Тераса 2"><div class="caption">Тераса 2</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymTerasa3.jpg" alt="Тераса 3"><div class="caption">Тераса 3</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymVino.jpg" alt="Лозя"><div class="caption">Лозя</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymVino2.jpg" alt="Лозя 2"><div class="caption">Лозя 2</div></div>
-            <div class="gallery-item" onclick="openLightbox(this)"><img src="../images/BeliOsymVino4.jpg" alt="Лозя 3"><div class="caption">Лозя 3</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSpalnq.jpg" alt="Спалня"><div class="caption">Спалня</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSpalnq2.jpg" alt="Спалня 2"><div class="caption">Спалня 2</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSpalnq3.jpg" alt="Спалня 3"><div class="caption">Спалня 3</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSpalnq4.jpg" alt="Спалня 4"><div class="caption">Спалня 4</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSpalnq5.jpg" alt="Спалня 5"><div class="caption">Спалня 5</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSpalnq6.jpg" alt="Спалня 6"><div class="caption">Спалня 6</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymSpalnq7.jpg" alt="Спалня 7"><div class="caption">Спалня 7</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymTerasa.jpg" alt="Тераса"><div class="caption">Тераса</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymTerasa2.jpg" alt="Тераса 2"><div class="caption">Тераса 2</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymTerasa3.jpg" alt="Тераса 3"><div class="caption">Тераса 3</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymVino.jpg" alt="Лозя"><div class="caption">Лозя</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymVino2.jpg" alt="Лозя 2"><div class="caption">Лозя 2</div></div>
+            <div class="gallery-item" onclick="otvoriSlika(this)"><img src="../images/BeliOsymVino4.jpg" alt="Лозя 3"><div class="caption">Лозя 3</div></div>
         </div>
     </div>
     <div class="footer">
         <p>&copy; 2024 КП Хилс</p>
     </div>
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox" id="lightbox" onclick="zatvoriSlika()">
         <span class="close">&times;</span>
-        <img id="lightbox-img" src="" alt="">
-        <div class="caption" id="lightbox-caption"></div>
+        <img id="golqmaSlika" src="" alt="">
+        <div class="caption" id="tekstCapt"></div>
     </div>
     <script>
-        function openLightbox(el) {
-            var img = el.querySelector('img');
-            var caption = el.querySelector('.caption').textContent;
-            document.getElementById('lightbox-img').src = img.src;
-            document.getElementById('lightbox-caption').textContent = caption;
+        function otvoriSlika(el) {
+            var slika = el.querySelector('img');
+            var tekst = el.querySelector('.caption').textContent;
+            document.getElementById('golqmaSlika').src = slika.src;
+            document.getElementById('tekstCapt').textContent = tekst;
             document.getElementById('lightbox').classList.add('active');
         }
-        function closeLightbox() {
+        function zatvoriSlika() {
             document.getElementById('lightbox').classList.remove('active');
         }
     </script>

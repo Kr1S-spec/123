@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>КП Хилс - Агенция за недвижими имоти</title>
+    <title>КП Хилс</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="KPHILLSLOGO.png">
@@ -15,14 +15,14 @@
                 <img src="KPHILLSLOGO.png" alt="КП Хилс" class="logo-img">
             </div>
             <ul class="nav-links">
-                <li><a href="#home" class="active">Начало</a></li>
-                <li><a href="#houses">Имоти</a></li>
-                <li><a href="#about">За нас</a></li>
-                <li><a href="#contact">Контакти</a></li>
+                <li><a href="#nachalo" class="active">Начало</a></li>
+                <li><a href="#imoti">Имоти</a></li>
+                <li><a href="#za-nas">За нас</a></li>
+                <li><a href="#kontakti">Контакти</a></li>
             </ul>
             <div class="nav-right">
                 <div class="language-selector">
-                    <select id="languageSelect" onchange="changeLanguage(this.value)">
+                    <select id="languageSelect" onchange="smeniEzik(this.value)">
                         <option value="bg">Български</option>
                         <option value="en">English</option>
                     </select>
@@ -34,47 +34,47 @@
         </div>
     </nav>
 
-    <section id="home" class="hero">
+    <section id="nachalo" class="hero">
         <div class="hero-content">
             <h1>Намерете своя перфектен <span class="highlight">дом в КП Хилс</span></h1>
             <p>Открийте топлината и красотата на имотите в КП Хилс.</p>
             <div class="search-box">
                 <div class="search-field">
                     <i class="fa-solid fa-house"></i>
-                    <select id="locationSearch">
+                    <select id="lokaciq">
                         <option value="Green Hills">Green Hills</option>
                         <option value="Sunny Beach">Sunny Beach</option>
                         <option value="Pleven">Pleven</option>
                     </select>
                 </div>
-                <button class="search-btn" onclick="scrollToHouses()">
+                <button class="search-btn" onclick="tirseneImoti()">
                     <i class="fa-solid fa-magnifying-glass"></i> Търси
                 </button>
             </div>
         </div>
     </section>
 
-    <section id="houses" class="houses-section">
+    <section id="imoti" class="houses-section">
         <div class="section-header">
             <h2>Нашите имоти</h2>
             <p>Прегледайте нашите прекрасни имоти</p>
         </div>
         <div class="houses-grid">
-            <div class="house-card" onclick="openHousePage('Green Hills')">
+            <div class="house-card" onclick="otvoriKushta('Green Hills')">
                 <img src="images/BeliOsymFront.jpg" alt="Green Hills">
                 <div class="house-card-info">
                     <h3>Green Hills</h3>
                     <p>Подробно</p>
                 </div>
             </div>
-            <div class="house-card" onclick="openHousePage('Sunny Beach')">
+            <div class="house-card" onclick="otvoriKushta('Sunny Beach')">
                 <img src="images/BeliOsymFront.jpg" alt="Sunny Beach">
                 <div class="house-card-info">
                     <h3>Sunny Beach</h3>
                     <p>Подробно</p>
                 </div>
             </div>
-            <div class="house-card" onclick="openHousePage('Pleven')">
+            <div class="house-card" onclick="otvoriKushta('Pleven')">
                 <img src="images/BeliOsymFront.jpg" alt="Pleven">
                 <div class="house-card-info">
                     <h3>Pleven</h3>
@@ -84,7 +84,7 @@
         </div>
     </section>
 
-    <section id="about" class="about-section">
+    <section id="za-nas" class="about-section">
         <div class="about-content">
             <div class="about-text">
                 <h2>За КП Хилс</h2>
@@ -114,7 +114,7 @@
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="kontakti" class="contact-section">
         <div class="section-header">
             <h2>Свържете се с нас</h2>
             <p>Бихме искали да чуем от вас</p>
@@ -125,21 +125,21 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <div>
                         <h4>Адрес</h4>
-                        <p>ул. "Котленска" №123<br>София, 1000</p>
+                        <p>гр. Плевен, бул. България №8</p>
                     </div>
                 </div>
                 <div class="info-item">
                     <i class="fa-solid fa-phone"></i>
                     <div>
                         <h4>Телефон</h4>
-                        <p>+359 (2) 123-4567</p>
+                        <p>+359878802151</p>
                     </div>
                 </div>
                 <div class="info-item">
                     <i class="fa-solid fa-envelope"></i>
                     <div>
                         <h4>Имейл</h4>
-                        <p>info@kphills.com</p>
+                        <p>officeresheniabg@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -157,20 +157,13 @@
             <div class="footer-section">
                 <h4>Бързи връзки</h4>
                 <ul>
-                    <li><a href="#home">Начало</a></li>
-                    <li><a href="#houses">Имоти</a></li>
-                    <li><a href="#about">За нас</a></li>
-                    <li><a href="#contact">Контакти</a></li>
+                    <li><a href="#nachalo">Начало</a></li>
+                    <li><a href="#imoti">Имоти</a></li>
+                    <li><a href="#za-nas">За нас</a></li>
+                    <li><a href="#kontakti">Контакти</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h4>Новинар</h4>
-                <p>Абонирайте се за най-новите оферти</p>
-                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-                    <input type="email" placeholder="Вашият имейл" id="newsletterEmail" required>
-                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
-                </form>
-            </div>
+            
         </div>
         <div class="footer-bottom">
             <p>&copy; 2024 КП Хилс. Всички права запазени.</p>
